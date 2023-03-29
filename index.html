@@ -14,7 +14,17 @@
        <button type="button" onclick="startGame()">Start Quiz</button>
 
     </div>
-
+    <div id="questions">
+        <p>
+            <span id="question"> </span>
+            <button id="answerA" type="button" onclick="checkAnswer ('a')"></button>
+            <button id="answerB" type="button" onclick="checkAnswer ('b')"></button>
+            <button id="answerC" type="button" onclick="checkAnswer ('c')"></button>
+            <button id="answerD" type="button" onclick="checkAnswer ('d')"></button>
+        </p>
+        <span id="answer"></span>
+        
+    </div>
 
 
     <script src="script.js"></script>    
