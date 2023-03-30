@@ -1,5 +1,6 @@
 var questionNo = 0;
 var score = 0;
+var counter = 60;
 
 const questions = [
     {
@@ -44,6 +45,28 @@ const questions = [
 
     }
 ];
+function startCountdown() {
+    const interval = setInterval(() => {
+        console.log (counter);
+        
+        //to do: change the HTML element with the ID of "timer" to show the variable "counter"
+        var countTime = document.getElementById ("timer");
+        countTime.innerHTML = counter;
+
+        counter--;
+        
+        if (counter < 0 ) {
+            clearInterval(interval);
+            var questionsDiv = document.getElementById ("questions");
+            questionsDiv.style.display = "none";
+            var scorepage = document.getElementById ("scorepage");
+            scorepage.style.display = "block";
+            var scoreNumber = document.getElementById ("score");
+            scoreNumber.innerHTML = score;
+            console.log (score);   
+        }
+    }, 1000);
+  }
 
 function loadQuestions () { 
 
@@ -65,6 +88,8 @@ function loadQuestions () {
 
 }
 function startGame () {
+    startCountdown (60);
+
     // reference the HTML element you want to manipulate
     var introSection = document.getElementById ("heading");
 
@@ -84,6 +109,7 @@ function checkAnswer (userChoice) {
         var scoreNumber = document.getElementById ("score");
         scoreNumber.innerHTML = score;
         console.log (score);
+        counter=0;
     } else {
         
         var correctAnswer = questions[questionNo].correctAnswer;
@@ -94,6 +120,11 @@ function checkAnswer (userChoice) {
         }else {
             var answer = document.getElementById ("answer");
             answer.innerHTML = "This is incorrect answer";
+            counter-=10;
+             //to do: change the HTML element with the ID of "timer" to show the variable "counter"
+             var countTime = document.getElementById ("timer");
+             countTime.innerHTML = counter;
+             
         }
         questionNo++; 
         
