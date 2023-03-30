@@ -1,5 +1,6 @@
 var questionNo = 0;
 var score = 0;
+
 const questions = [
     {
         question: "Which one is the basic part of HTML?",
@@ -42,8 +43,10 @@ const questions = [
         correctAnswer: "a"
 
     }
-]
+];
+
 function loadQuestions () { 
+
     var answerA = document.getElementById ("answerA");
     var answerB = document.getElementById ("answerB");
     var answerC = document.getElementById ("answerC");
@@ -56,7 +59,7 @@ function loadQuestions () {
     answerC.innerHTML = questions[questionNo].options.c;
     answerD.innerHTML = questions[questionNo].options.d;
     questionLabel.innerHTML = questions[questionNo].question;
-
+    
 
 
 
@@ -73,15 +76,31 @@ function startGame () {
     loadQuestions ();
 }
 function checkAnswer (userChoice) {
-    var correctAnswer = questions[questionNo].correctAnswer;
-    if (correctAnswer === userChoice) {
-        var answer = document.getElementById ("answer");
-        answer.innerHTML = "This is correct answer" ; 
-        score++;
-    }else {
-        var answer = document.getElementById ("answer");
-        answer.innerHTML = "This is incorrect answer";
+    if (questionNo === 4) {
+        var questionsDiv = document.getElementById ("questions");
+        questionsDiv.style.display = "none";
+        var scorepage = document.getElementById ("scorepage");
+        scorepage.style.display = "block";
+        var scoreNumber = document.getElementById ("score");
+        scoreNumber.innerHTML = score;
+        console.log (score);
+    } else {
+        
+        var correctAnswer = questions[questionNo].correctAnswer;
+        if (correctAnswer === userChoice) {
+            var answer = document.getElementById ("answer");
+            answer.innerHTML = "This is correct answer" ; 
+            score++;
+        }else {
+            var answer = document.getElementById ("answer");
+            answer.innerHTML = "This is incorrect answer";
+        }
+        questionNo++; 
+        
+        if (questionNo === 4) {
+            checkAnswer('');
+        } else
+         loadQuestions ();
     }
-    questionNo++;  
-    loadQuestions ();
-} 
+   
+}   
