@@ -135,3 +135,9 @@ function checkAnswer (userChoice) {
     }
    
 }   
+function saveInitials () {
+    var initials = document.getElementById ('initials').value;
+  
+    localStorage.setItem (initials,score);
+    alert ("Your initials and score have been saved");
+}

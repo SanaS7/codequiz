@@ -20,19 +20,21 @@
     </div>
     <div id="questions">
         <p>
-            <span id="question"> </span>
-            <button id="answerA" type="button" onclick="checkAnswer ('a')"></button>
-            <button id="answerB" type="button" onclick="checkAnswer ('b')"></button>
-            <button id="answerC" type="button" onclick="checkAnswer ('c')"></button>
-            <button id="answerD" type="button" onclick="checkAnswer ('d')"></button>
+            <span id="question"> </span><br>
+            <button id="answerA" type="button" onclick="checkAnswer ('a')"></button><br>
+            <button id="answerB" type="button" onclick="checkAnswer ('b')"></button><br>
+            <button id="answerC" type="button" onclick="checkAnswer ('c')"></button><br>
+            <button id="answerD" type="button" onclick="checkAnswer ('d')"></button><br>
         </p>
         <span id="answer"></span>
         
     </div>
     <div id="scorepage">
-        <p>All done! Your final score is <span id="score"></span>
-            
-        </p>
+        <p>All done! Your final score is <span id="score"></span></p>
+        <p>Enter initials</p>
+        <p><input type="text" id="initials"></p> 
+        <p><button type ="button" onclick="saveInitials ()">submit</button></p>
+        
         
     </div>
 
