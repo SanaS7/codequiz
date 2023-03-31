@@ -9,7 +9,13 @@
 
 #questions {
     display: none;
+    text-align: center;
+    font-size: 50px;
 }
 #scorepage {
     display: none;
+}
+button {
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
