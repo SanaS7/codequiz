@@ -10,7 +10,7 @@ In this challenge, I have used learned about javascript codes.
 
 To install this project:
 1. Run
-`git clone git@github.com:SanaS7/passwordgenerator.git`
+`git clone git@github.com:SanaS7/codequiz.git`
 
 2. Open the folder on your preferred code editor.
 
